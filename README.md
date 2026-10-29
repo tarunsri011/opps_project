@@ -35,8 +35,7 @@ Key frontend folders: `pages/` (9 screens), `components/` (layout, guards, badge
 ## Prerequisites
 
 - Java 17+ (tested on 26)
-- Maven 3.9+ — a local copy is in `.tools/apache-maven-3.9.9/` if Maven isn't installed:
-  `.tools/apache-maven-3.9.9/bin/mvn`
+- Maven 3.9+ (or use your IDE's bundled Maven)
 - Node.js 18+ and npm
 - MySQL 8 running locally
 
@@ -57,7 +56,7 @@ first run only, when the `users` table is empty.
 
 ```bash
 cd backend
-../.tools/apache-maven-3.9.9/bin/mvn spring-boot:run    # or: mvn spring-boot:run
+mvn spring-boot:run
 ```
 
 Starts on <http://localhost:8080>. Schema is created/updated by Hibernate (`ddl-auto=update`).
@@ -113,7 +112,7 @@ restores `SURPLUS`; logging waste marks the item `EXPIRED`; completing a pickup 
 Automated tests (in-memory H2, MySQL not required):
 
 ```bash
-cd backend && ../.tools/apache-maven-3.9.9/bin/mvn test
+cd backend && mvn test
 ```
 
 Full API check against a running backend (43 assertions: auth, every endpoint, role and
